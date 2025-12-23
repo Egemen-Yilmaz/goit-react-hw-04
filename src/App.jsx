@@ -68,8 +68,7 @@ export default function App() {
         <div>
             <SearchBox onSubmit={handleSearch} />
 
-                    {/* prefer to show the gallery when possible; errors will show toast notifications */}
-                    {images.length > 0 && <ImageGallery images={images} onImageClick={openModal} />}
+            {images.length > 0 && <ImageGallery images={images} onImageClick={openModal} />}
 
             {loader && <Loader />}
 
