@@ -13,9 +13,8 @@ export default function App() {
     const [loader, setLoader] = useState(false);
     const [query, setQuery] = useState('');
     const [page, setPage] = useState(1);
-    // we no longer use an error fallback UI; prefer toast notifications for async failures
-    // and keep the UI functional
-    const [error] = useState(false);
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
