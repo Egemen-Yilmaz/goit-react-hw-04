@@ -59,3 +59,16 @@ Vercel'e deploy ederken
 - Hem Preview hem de Production ortamları için uygun şekilde anahtarları eklediğinizden emin olun.
 
 Güvenlik notu: Access Key'inizi ve Secret Key'inizi herkese açık reposlarda paylaşmayın. Eğer anahtarın sızdığını düşünüyorsanız Unsplash panelinden anahtarı iptal edin ve yenisini oluşturun.
+
+Deploy (Vercel) için hızlı rehber
+--------------------------------
+
+1) GitHub reposunuza push edildi (bu repo şu an origin/main'de mevcut).
+2) Vercel üzerinde yeni bir proje oluşturun ve GitHub hesabınızı bağlayın, bu repo'yu seçin.
+3) Build ayarları otomatik algılanacaktır (Vite). Eğer manuel ayarlamak isterseniz:
+  - Build Command: `npm run build`
+  - Output Directory: `dist`
+4) Environment Variables (Project -> Settings -> Environment Variables) bölümüne `VITE_UNSPLASH_ACCESS_KEY` anahtarını ekleyin ve değerini girin. Hem Preview hem Production için eklemenizi öneririm.
+5) Deploy tetiklendiğinde Vercel `npm install` ve `npm run build` komutlarını çalıştıracak ve `dist` klasörünü dağıtacaktır.
+
+Not: `.env` dosyası local geliştirme içindir ve `.gitignore` içinde listelenmiştir — Vercel üzerinde gizli anahtarları proje ayarlarından ekleyin; `.env` dosyasını repoya commit etmeyin.
