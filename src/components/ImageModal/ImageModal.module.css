@@ -1,0 +1,46 @@
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+/* Modal container itself is transparent; style the direct child as the content box */
+.modal {
+	background: transparent;
+	padding: 0;
+	border-radius: 8px;
+	box-shadow: none;
+}
+
+.modal > div {
+	background: rgba(0, 0, 0, 0.85);
+	padding: 12px;
+	border-radius: 8px;
+	max-width: calc(100vw - 40px);
+	max-height: calc(100vh - 80px);
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img {
+	display: block;
+	max-width: calc(100vw - 80px);
+	max-height: calc(100vh - 160px);
+	width: auto;
+	height: auto;
+	object-fit: contain; /* ensure whole image fits inside modal */
+}
+
+.meta {
+	color: #fff;
+	margin-top: 8px;
+}

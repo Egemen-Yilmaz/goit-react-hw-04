@@ -1,0 +1,21 @@
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 16px;
+	padding: 16px;
+	align-items: start; /* ensure items align to top */
+}
+
+.item {
+	background: transparent;
+	border-radius: 8px;
+	overflow: visible;
+	box-shadow: none;
+	display: flex;
+	justify-content: center;
+    cursor: pointer;
+}
+
+.itemInner {
+  width: 100%;
+}
