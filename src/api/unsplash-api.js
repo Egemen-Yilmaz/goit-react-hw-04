@@ -6,9 +6,8 @@ export const fetchImages = async (searchQuery, page = 1) => {
     const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
     if (!accessKey) {
-        throw new Error(
-            'VITE_UNSPLASH_ACCESS_KEY is not defined. Add it to your .env file.'
-        );
+        console.error('VITE_UNSPLASH_ACCESS_KEY is not defined. Add it to your .env file or set it in Vercel.');
+        return { results: [] };
     }
 
         try {
